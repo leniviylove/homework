@@ -1,0 +1,30 @@
+Задача: 
+Задайте массив заполненный случайными трёхзначными числами. 
+Напишите программу, которая покажет количество чётных чисел в массиве.
+int size = 10;
+int[] numbers = new int[size];
+Random random = new Random();
+
+for (int i = 0; i < size; i++)
+{
+    numbers[i] = random.Next(100, 1000); 
+}
+
+Console.WriteLine("Сгенерированный массив:");
+foreach (var number in numbers)
+{
+    Console.Write(number + " ");
+}
+Console.WriteLine();
+
+
+int evenCount = 0;
+foreach (var number in numbers)
+{
+    if (number % 2 == 0) 
+    {
+        evenCount++;
+    }
+}
+
+Console.WriteLine($"Количество четных чисел в массиве: {evenCount}");
